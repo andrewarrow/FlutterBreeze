@@ -16,8 +16,6 @@ flutter run -d [your_device_id]
 
 # iOS Screenshots
 
-![Login](screenshots/ms1.png)
+<img src="screenshots/ms1.png" alt="Login" width="300" height="200">
 
-![Login](screenshots/ms1.png){: width="300px" height="200px" }
-![Login](screenshots/ms2.png){: width="300px" height="200px" }
 
