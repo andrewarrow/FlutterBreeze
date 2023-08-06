@@ -26,7 +26,7 @@ class HomePage extends StatelessWidget {
     };
 
     int statusCode = 200;
-    String body = '[{"id": 1, "name": "milkshake"}]';
+    String body = '[{"id": 1, "name": "milkshake"},{"id": 2, "name": "other"}]';
   try {
     final response = await http.get(
       dashboardUri,
