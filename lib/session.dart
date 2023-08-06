@@ -19,16 +19,24 @@ class _LoginPageState extends State<LoginPage> {
 
     final Uri loginUri = Uri.parse('http://localhost:3000/api/login');
 
-    final response = await http.post(
-      loginUri,
-      body: {
-        'username': username,
-        'password': password,
-      },
-    );
+    int statusCode = 0;
+    String body = '';
+    try {
+      final response = await http.post(
+        loginUri,
+        body: {
+          'username': username,
+          'password': password,
+        },
+      );
+      statusCode = response.statusCode;
+      body = response.body;
+    } catch (e) {
+      print('Error: ${e.toString()}');
+    }
 
-    if (response.statusCode == 200) {
-      final jsonResponse = json.decode(response.body);
+    if (statusCode == 200) {
+      final jsonResponse = json.decode(body);
 
       Navigator.push(
         context,
@@ -38,7 +46,7 @@ class _LoginPageState extends State<LoginPage> {
       );
     } else {
       setState(() {
-        _loginError = 'Login failed with status code: ${response.statusCode}';
+        _loginError = 'Login failed with status code: ${statusCode}';
       });
     }
   }
