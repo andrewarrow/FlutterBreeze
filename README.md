@@ -11,12 +11,6 @@ in as and can log out.
 
 The list of items lets you select one and goto a detail page for that item.
 
-```
-  http: ^0.13.3
-  path_provider: ^2.0.5
-  cached_network_image: ^3.0.0
-```
-
 # Run
 
 ```
