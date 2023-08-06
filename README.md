@@ -10,4 +10,11 @@
 
 ```
 flutter pub get
+flutter devices
+flutter run -d [your_device_id]
 ```
+
+# iOS Screenshots
+
+![Login](screenshots/ms1.png)
+
