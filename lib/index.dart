@@ -25,15 +25,21 @@ class HomePage extends StatelessWidget {
      'Authorization': 'Bearer '+id,
     };
 
+    int statusCode = 200;
+    String body = '[{"id": 1, "name": "milkshake"}]';
+  try {
     final response = await http.get(
       dashboardUri,
       headers: headers,
     );
+  } catch (e) {
+      print('Error: ${e.toString()}');
+  }
 
-    if (response.statusCode == 200) {
-      await Util.writeToFile(response.body);
+    if (statusCode == 200) {
+      await Util.writeToFile(body);
 
-      final List<dynamic> jsonData = jsonDecode(response.body);
+      final List<dynamic> jsonData = jsonDecode(body);
       return jsonData;
     } else {
       throw Exception('Failed to load data');
