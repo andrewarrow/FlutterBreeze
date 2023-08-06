@@ -18,3 +18,6 @@ flutter run -d [your_device_id]
 
 ![Login](screenshots/ms1.png)
 
+![Login](screenshots/ms1.png){: width="300px" height="200px" }
+![Login](screenshots/ms2.png){: width="300px" height="200px" }
+
