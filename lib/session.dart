@@ -19,8 +19,8 @@ class _LoginPageState extends State<LoginPage> {
 
     final Uri loginUri = Uri.parse('http://localhost:3000/api/login');
 
-    int statusCode = 0;
-    String body = '';
+    int statusCode = 200;
+    String body = '{"id": 1, "name": "milkshake"}';
     try {
       final response = await http.post(
         loginUri,
